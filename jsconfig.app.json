@@ -1,0 +1,90 @@
+{
+  // The 'extends' property allows this config to inherit settings from another jsconfig.json.
+  // This is useful if you have a base config and want to override or add to it.
+  // If your root jsconfig.json already has general settings, extending it can keep things DRY.
+  // For this example, we'll assume it's a standalone app config.
+  // "extends": "./jsconfig.json",
+
+  "compilerOptions": {
+    // Specifies how JSX is handled.
+    // "react" is for React applications, transforming JSX into React.createElement calls.
+    // Use "preserve" if your build tool (like Babel or SWC) handles JSX transformation.
+    "jsx": "react",
+
+    // Specifies the module system for generated JavaScript code.
+    // "ESNext" is suitable for modern JavaScript applications that are bundled
+    // by tools like Webpack, Rollup, or Vite, as they handle module resolution.
+    "module": "ESNext",
+
+    // Specifies the JavaScript language version for emitted JavaScript code.
+    // "ESNext" targets the latest ECMAScript features, assuming your build process
+    // will transpile it down to a compatible version for your target browsers.
+    "target": "ESNext",
+
+    // Specifies a list of JavaScript library files to be included in the compilation.
+    // "DOM" includes browser APIs (e.g., document, window).
+    // "DOM.Iterable" adds support for iterable DOM types.
+    // "ESNext" includes all ECMAScript features up to the latest version.
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+
+    // Allow JavaScript files to be compiled. This is crucial for a jsconfig.json.
+    "allowJs": true,
+
+    // Skip type checking of all declaration files (*.d.ts).
+    // Useful for speeding up compilation and avoiding errors from node_modules.
+    "skipLibCheck": true,
+
+    // Enables a full range of interoperability between CommonJS and ES Modules.
+    // This allows you to use 'import React from "react"' even if 'react' is a CommonJS module.
+    "esModuleInterop": true,
+
+    // Allows default imports from modules with no default export.
+    // This does not affect code emit, just type checking and IntelliSense.
+    "allowSyntheticDefaultImports": true,
+
+    // Enable all strict type-checking options. While this is primarily for TypeScript,
+    // setting it to true can help catch common JavaScript errors and improve IntelliSense.
+    "strict": true,
+
+    // Ensures that casing of file names is consistent across the project.
+    // This helps prevent issues on case-insensitive file systems (like Windows/macOS)
+    // when deploying to case-sensitive ones (like Linux).
+    "forceConsistentCasingInFileNames": true,
+
+    // Specifies how modules are resolved.
+    // "bundler" is often recommended for modern bundlers (Webpack 5, Vite, Rollup).
+    // "node" is the classic Node.js resolution strategy.
+    "moduleResolution": "bundler",
+
+    // Allows importing .json files as modules.
+    "resolveJsonModule": true,
+
+    // Ensures that each file can be safely transpiled without relying on other files.
+    // This is important for tools like Babel or SWC that process files individually.
+    "isolatedModules": true,
+
+    // Do not emit outputs (like .js files).
+    // This is typical for frontend projects where a bundler handles the final output.
+    "noEmit": true,
+
+    // Base directory to resolve non-relative module names.
+    // "." means the directory containing this jsconfig.app.json file.
+    "baseUrl": ".",
+
+    // Configure path mappings to enable absolute imports.
+    // "@/*" maps to "./src/*", meaning "import Component from '@/components/MyComponent'"
+    // will resolve to "src/components/MyComponent".
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  // Specifies which files to include in the project.
+  // "src/**/*" includes all JavaScript/JSX files within the 'src' directory and its subdirectories.
+  // "env.d.ts" is a common pattern for environment variable type declarations (even in JS projects).
+  "include": ["src/**/*", "env.d.ts"],
+
+  // Specifies which files or folders to exclude from the project.
+  // "node_modules", "dist", and "build" are standard exclusions.
+  // Test files are often excluded from the main application compilation.
+  "exclude": ["node_modules", "dist", "build", "**/*.spec.js", "**/*.test.js"]
+}
