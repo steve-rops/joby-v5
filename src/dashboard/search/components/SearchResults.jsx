@@ -4,7 +4,6 @@ import { Circle, MapPin, Pin } from "lucide-react";
 
 export const SearchResults = () => {
   const { data } = useGetJobs();
-  console.log(data);
   return (
     <div className="space-y-4">
       <h3 className="text-lg text-foreground/75 font-semibold">
