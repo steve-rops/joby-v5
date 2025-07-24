@@ -8,7 +8,7 @@ export const getJobs = async (searchQuery, country) => {
 
   try {
     const res = await fetch(
-      `http://api.adzuna.com/v1/api/jobs/${country}/search/1?app_id=${API_ID}&app_key=${API_KEY}&results_per_page=20&what=${search}&content-type=application/json`
+      `https://api.adzuna.com/v1/api/jobs/${country}/search/1?app_id=${API_ID}&app_key=${API_KEY}&results_per_page=20&what=${search}&content-type=application/json`
     );
     if (!res.ok) throw new Error("There was an error fetching the Jobs");
 
