@@ -31,7 +31,7 @@ export const SearchBar = () => {
           <CountrySelection className="rounded-r-none hidden md:flex" />
           <Input
             placeholder="Search any job..."
-            className="md:rounded-l-none focus-visible:ring-0 focus-visible:border-muted placeholder:text-muted-foreground/75"
+            className="md:rounded-l-none focus-visible:ring-0 focus-visible:border-muted placeholder:text-muted-foreground/75 border-muted-foreground/40"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyDown={handleKeyDown}

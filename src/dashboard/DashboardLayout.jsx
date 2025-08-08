@@ -7,7 +7,7 @@ export const DashboardLayout = () => {
     <>
       <Header />
       {/* mobile menu */}
-      <NavMenu className=" md:hidden w-full justify-between grid grid-cols-3 place-items-center" />
+      <NavMenu className=" md:hidden w-full grid grid-cols-2 place-items-center" />
       <div className="h-2 w-full bg-muted"></div>
 
       <div className="p-6">

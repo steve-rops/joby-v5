@@ -14,3 +14,9 @@ export const isNew = (date, threshold = 7) => {
 
   return dif <= threshold;
 };
+
+export const findTheMostMoney = (jobsArray) => {
+  return jobsArray.reduce((acc, curr) => {
+    return curr.salary_max > acc ? curr.salary_max : acc;
+  }, 0);
+};

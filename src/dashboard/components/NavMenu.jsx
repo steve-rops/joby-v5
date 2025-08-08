@@ -13,7 +13,7 @@ export const NavMenu = ({ className }) => {
       >
         Search
       </NavLink>
-      <NavLink
+      {/* <NavLink
         className={({ isActive }) =>
           `hover:text-accent-foreground ${
             isActive && "border-b border-b-primary text-primary"
@@ -22,7 +22,7 @@ export const NavMenu = ({ className }) => {
         to="/dashboard/map"
       >
         Map
-      </NavLink>
+      </NavLink> */}
       <NavLink
         className={({ isActive }) =>
           `hover:text-accent-foreground ${
