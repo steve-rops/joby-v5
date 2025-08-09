@@ -1,15 +1,24 @@
+import { CustomDrawer } from "@/components/CustomDrawer";
 import { Button } from "@/components/ui/button";
 import { useGetJobs } from "@/hooks/jobs/useGetJobs";
 import { isNew } from "@/lib/utils";
 import { Circle, HeartIcon, MapPin, Pin } from "lucide-react";
+import { Link } from "react-router";
+import { LikeJobButton } from "./LikeJobButton";
 
 export const SearchResults = () => {
   const { filteredData } = useGetJobs();
+
   return (
     <div className="space-y-4">
-      <h3 className="text-lg text-foreground/75 font-semibold">
-        Search Results
-      </h3>
+      <div className="flex items-center justify-between sticky top-0 bg-background py-2 md:relative">
+        <h3 className="text-lg text-foreground/75 font-semibold">
+          Search Results
+        </h3>
+        <CustomDrawer className="md:hidden">
+          <Button variant="secondary">Filters</Button>
+        </CustomDrawer>
+      </div>
       <div className="space-y-2 md:grid md:grid-cols-2 gap-2">
         {filteredData.map((job) => (
           <SingleJobListing key={job.id} job={job} />
@@ -29,7 +38,7 @@ const SingleJobListing = ({ job }) => {
             <span className="text-primary/85">{job.company.display_name}</span>
           </div>
 
-          <HeartIcon />
+          <LikeJobButton id={job.id} />
         </div>
         <div className="flex gap-1 items-center text-muted-foreground/70">
           <MapPin width={14} height={14} />
@@ -66,9 +75,11 @@ const SingleJobListing = ({ job }) => {
       </div>
 
       <div className="mt-2">
-        <Button variant="outline" className="w-full">
-          Learn more
-        </Button>
+        <Link to={job.redirect_url} target="_blank">
+          <Button variant="outline" className="w-full">
+            Learn more
+          </Button>
+        </Link>
       </div>
     </div>
   );

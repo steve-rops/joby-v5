@@ -4,7 +4,7 @@ import { useNavigate, useSearchParams } from "react-router";
 import { useGetJobs } from "@/hooks/jobs/useGetJobs.js";
 import { findTheMostMoney } from "@/lib/utils.js";
 
-export const Filters = () => {
+export const Filters = ({ className, screen, setOpen }) => {
   const { fetchedData } = useGetJobs();
   const [mostMoney, _setMostMoney] = useState(() =>
     Math.ceil(findTheMostMoney(fetchedData) / 1000)
@@ -48,6 +48,7 @@ export const Filters = () => {
   const handleReset = (e) => {
     e.preventDefault();
     navigate("/dashboard/search");
+    setOpen(false);
   };
 
   const handleSubmit = (e) => {
@@ -71,7 +72,7 @@ export const Filters = () => {
       jobType,
       salaryRange: { min: minSalary, max: maxSalary },
     });
-    // Here you would typically trigger a search or update the state in a parent component
+    setOpen(false);
   };
 
   useEffect(() => {
@@ -85,16 +86,16 @@ export const Filters = () => {
       jobType,
       salaryRange: { min, max },
     });
-  }, [searchParams]);
+  }, [searchParams, MAX]);
 
   return (
-    <form
-      onReset={handleReset}
-      onSubmit={handleSubmit}
-      className="hidden md:flex md:flex-col border rounded-lg p-3 h-fit sticky top-4 "
-    >
-      <h3 className="text-2xl text-primary">Filters</h3>
-      <hr className="my-1" />
+    <form onReset={handleReset} onSubmit={handleSubmit} className={className}>
+      {screen === "big" && (
+        <>
+          <h3 className="text-2xl text-primary">Filters</h3>
+          <hr className="my-1" />
+        </>
+      )}
 
       <div className="space-y-8">
         {/* sortBy */}
