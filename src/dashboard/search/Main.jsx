@@ -14,7 +14,7 @@ export const Main = () => {
         <TopCategories />
       </Suspense>
 
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className="mx-auto py-4 loader"></div>}>
         <SearchResults />
       </Suspense>
     </div>

@@ -21,7 +21,14 @@ export const useGetJobs = () => {
   const min = Number(searchParams.get("minSalary")) || 0;
   const max = Number(searchParams.get("maxSalary")) || mostMoney;
 
-  const sortedData = fetchedData?.slice().sort((a, b) => {
+  // 1. Add liked boolean as an attribute
+  const addedLikedAttData = fetchedData?.map((item) => ({
+    ...item,
+    liked: item.liked ?? false,
+  }));
+
+  // 2. sort
+  const sortedData = addedLikedAttData.slice().sort((a, b) => {
     switch (sort) {
       case "recent":
         return new Date(b.created).getTime() - new Date(a.created).getTime();
@@ -34,14 +41,13 @@ export const useGetJobs = () => {
     }
   });
 
-  const refinedJobType = jobType.map((type) => type.toLowerCase());
-
+  // 3. Add salary restrictions
   const dataWithSalaryResitrictions = sortedData.filter(
     (item) => item.salary_max >= min * 1000 && item.salary_max <= max * 1000
   );
 
-  console.log(refinedJobType);
-
+  // 4. filter Jobs
+  const refinedJobType = jobType.map((type) => type.toLowerCase());
   const filteredData = dataWithSalaryResitrictions.filter((item) =>
     refinedJobType.length === 0
       ? true
