@@ -38,7 +38,7 @@ const SingleJobListing = ({ job }) => {
             <span className="text-primary/85">{job.company.display_name}</span>
           </div>
 
-          <LikeJobButton id={job.id} />
+          <LikeJobButton title={job.title} id={job.id} url={job.redirect_url} />
         </div>
         <div className="flex gap-1 items-center text-muted-foreground/70">
           <MapPin width={14} height={14} />

@@ -6,17 +6,15 @@ export const useUpdateUserMetadata = () => {
   const queryClient = useQueryClient();
 
   const { data, mutate, isPending } = useMutation({
-    mutationFn: async ({ jobId, currentlyLiked }) => {
+    mutationFn: async ({ title, url, jobId }) => {
       if (!user) throw new Error("User not authenticated");
 
       const currentLiked = user.unsafeMetadata?.liked || [];
+      const currentlyLiked = currentLiked.some((job) => job.id === jobId);
 
-      let updatedLiked;
-      if (currentlyLiked) {
-        updatedLiked = currentLiked.filter((id) => id !== jobId);
-      } else {
-        updatedLiked = [...currentLiked, jobId];
-      }
+      const updatedLiked = currentlyLiked
+        ? currentLiked.filter((job) => job.id !== jobId) // Unlike
+        : [...currentLiked, { title, url, id: jobId }]; // Like
 
       await user.update({
         unsafeMetadata: {
@@ -25,7 +23,7 @@ export const useUpdateUserMetadata = () => {
         },
       });
 
-      return { jobId, updatedLiked };
+      return { jobId, updatedLiked, currentlyLiked };
     },
 
     onSuccess: () => {

@@ -2,21 +2,25 @@ import { useUpdateUserMetadata } from "@/hooks/user/useUpdateUserMetadata";
 import { useUser } from "@clerk/clerk-react";
 import { HeartIcon } from "lucide-react";
 
-export const LikeJobButton = ({ id }) => {
-  const { user } = useUser();
+export const LikeJobButton = ({ title, id, url }) => {
   const { mutate, isPending } = useUpdateUserMetadata();
 
+  const { user } = useUser();
+
   const likedJobs = user?.unsafeMetadata?.liked || [];
-  const isLiked = likedJobs.includes(id);
+  const isLiked = likedJobs.some((job) => job.id === id);
 
   const handleClick = () => {
-    if (!user || isPending) return;
+    if (isPending) return;
 
     mutate({
+      title,
+      url,
       jobId: id,
-      currentlyLiked: isLiked,
     });
   };
+
+  if (isPending) return <HeartIcon className="fill-accent" />;
 
   return (
     <div onClick={handleClick} className="cursor-pointer">
