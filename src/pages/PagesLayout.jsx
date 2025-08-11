@@ -1,7 +1,10 @@
 import { Outlet } from "react-router";
 import UserSignInBtn from "../components/UserSignInBtn";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export const PagesLayout = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="w-full">
       <header className="p-4 h-18 flex items-center justify-between w-full">
@@ -9,7 +12,7 @@ export const PagesLayout = () => {
           <img src="/logo.svg" width={100} height={100} />
         </a>
 
-        <nav>
+        <nav className="hidden md:flex">
           <ul className="flex gap-2 hover:cursor-pointer">
             <li className="hover:text-accent-foreground">Home</li>
             <li className="hover:text-accent-foreground">About</li>
@@ -17,8 +20,30 @@ export const PagesLayout = () => {
           </ul>
         </nav>
 
-        <UserSignInBtn />
+        <div className="hidden md:flex">
+          <UserSignInBtn />
+        </div>
+
+        {/* mobile menu  */}
+        <div className="md:hidden">
+          {!isOpen ? (
+            <Menu onClick={() => setIsOpen((open) => !open)} />
+          ) : (
+            <X onClick={() => setIsOpen((open) => !open)} />
+          )}
+        </div>
       </header>
+
+      {isOpen && (
+        <nav className="grid place-items-center ">
+          <ul className="hover:cursor-pointer flex flex-col items-center">
+            <li className="hover:text-accent-foreground">Home</li>
+            <li className="hover:text-accent-foreground">About</li>
+            <li className="hover:text-accent-foreground">Services</li>
+          </ul>
+        </nav>
+      )}
+
       <Outlet />
 
       <footer className="px-6 lg:px-8 py-12 border-t border-border bg-accent/20">
