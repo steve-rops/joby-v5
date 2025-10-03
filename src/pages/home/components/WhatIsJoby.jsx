@@ -4,7 +4,7 @@ import { Card, CardContent } from "../../../components/ui/card";
 
 export const WhatIsJoby = () => {
   return (
-    <section className="px-6 lg:px-8 py-20 bg-muted/30">
+    <section name="about" id="about" className="px-6 lg:px-8 py-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <Badge
