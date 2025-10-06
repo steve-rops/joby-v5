@@ -5,67 +5,75 @@ import { Card, CardContent } from "../../../components/ui/card";
 export const WhatIsJoby = () => {
   return (
     <section name="about" id="about" className="px-6 lg:px-8 py-20">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+      <div className="max-w-6xl mx-auto space-y-10">
+        <div className="text-center space-y-4 ">
           <Badge
             variant="secondary"
             className="mb-4 text-accent-foreground bg-accent"
           >
             What is Joby?
           </Badge>
-          <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-2xl lg:text-3xl font-bold text-foreground ">
             The Modern Job Board That Actually Works
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Joby revolutionizes job searching by connecting talented
             professionals with their perfect opportunities through intelligent
             matching and seamless application processes.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Card className="border-border bg-card hover:shadow-lg transition-shadow">
-            <CardContent className="p-8">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <Search className="w-6 h-6 text-primary" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <Card className="border-border bg-card hover:shadow-lg transition-shadow col-span-2  grid place-items-cennter">
+            <CardContent className="flex-col md:flex-row flex items-center gap-4">
+              <img
+                src="/illustrations/undraw_reading-time_gcvc.svg"
+                className="w-40 h-40 "
+              />
+              <div>
+                <h3 className="text-xl font-semibold text-card-foreground mb-4">
+                  Easier than Ever
+                </h3>
+                <p className="text-muted-foreground">
+                  Takes seconds to sign-in and find the best jop opportunities.
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-card-foreground mb-4">
-                Smart Job Discovery
-              </h3>
-              <p className="text-muted-foreground">
-                Our AI-powered search helps you discover opportunities that
-                match your skills, experience, and career goals.
-              </p>
             </CardContent>
           </Card>
 
-          <Card className="border-border bg-card hover:shadow-lg transition-shadow">
-            <CardContent className="p-8">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <Zap className="w-6 h-6 text-primary" />
+          <Card className="border-border bg-card hover:shadow-lg transition-shadow row-span-2 grid place-items-center col-span-2 lg:col-span-1">
+            <CardContent className=" md:flex-row lg:flex-col flex flex-col items-center gap-4">
+              <img
+                src="/illustrations/undraw_filter_v54h.svg"
+                className="w-40 h-40 "
+              />
+              <div>
+                <h3 className="text-xl font-semibold text-card-foreground mb-4">
+                  Quick Filters
+                </h3>
+                <p className="text-muted-foreground">
+                  Jobs that match your skills and preferences, not the other way
+                  around.
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-card-foreground mb-4">
-                One-Click Applications
-              </h3>
-              <p className="text-muted-foreground">
-                Apply to multiple jobs instantly with your saved profile. No
-                more repetitive form filling.
-              </p>
             </CardContent>
           </Card>
 
-          <Card className="border-border bg-card hover:shadow-lg transition-shadow">
-            <CardContent className="p-8">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <TrendingUp className="w-6 h-6 text-primary" />
+          <Card className="border-border bg-card hover:shadow-lg transition-shadow col-span-2  grid place-items-cennter">
+            <CardContent className=" flex-col md:flex-row flex items-center gap-4">
+              <img
+                src="/illustrations/undraw_loving-it_hspq.svg"
+                className="w-40 h-40 "
+              />
+              <div>
+                <h3 className="text-xl font-semibold text-card-foreground mb-4">
+                  Save For Later
+                </h3>
+                <p className="text-muted-foreground">
+                  You are not sure yet? Save the job and come back later to
+                  apply.
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-card-foreground mb-4">
-                Real-Time Updates
-              </h3>
-              <p className="text-muted-foreground">
-                Get instant notifications about application status, new job
-                matches, and interview invitations.
-              </p>
             </CardContent>
           </Card>
         </div>

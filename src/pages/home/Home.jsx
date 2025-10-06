@@ -24,7 +24,7 @@ export const Home = () => {
       <Hero />
       <WhatIsJoby />
 
-      <section className="px-6 lg:px-8 py-20">
+      <section id="whyChooseUs" className="px-6 lg:px-8 py-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <Badge
@@ -33,10 +33,10 @@ export const Home = () => {
             >
               Why Choose Joby?
             </Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
+            <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-6">
               Built for Job Seekers, Loved by Employers
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-md text-muted-foreground max-w-3xl mx-auto">
               We've reimagined the job search experience from the ground up,
               making it faster, smarter, and completely free.
             </p>
@@ -163,10 +163,10 @@ export const Home = () => {
             >
               How It Works
             </Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
+            <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-6">
               Land Your Dream Job in 3 Simple Steps
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Our streamlined process gets you from job search to job offer
               faster than ever before.
             </p>

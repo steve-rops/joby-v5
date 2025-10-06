@@ -4,11 +4,15 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
+import { ArrowUp, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 export const BubbleDropdown = () => {
   const [open, setOpen] = useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -31,14 +35,14 @@ export const BubbleDropdown = () => {
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="center" className="w-48">
-        <DropdownMenuItem onClick={() => scrollToSection("home")}>
-          Home
+        <DropdownMenuItem onClick={() => scrollToTop()}>
+          <ArrowUp />
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => scrollToSection("about")}>
           About
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => scrollToSection("services")}>
-          Services
+        <DropdownMenuItem onClick={() => scrollToSection("whyChooseUs")}>
+          Why us
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => scrollToSection("contact")}>
           Contact
