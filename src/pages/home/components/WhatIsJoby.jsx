@@ -24,7 +24,7 @@ export const WhatIsJoby = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <Card className="border-border bg-card hover:shadow-lg transition-shadow col-span-2  grid place-items-cennter">
+          <Card className="border-border bg-card hover:shadow-lg  col-span-2  grid place-items-cennter hover:scale-102 transition-all duration-300">
             <CardContent className="flex-col md:flex-row flex items-center gap-4">
               <img
                 src="/illustrations/undraw_reading-time_gcvc.svg"
@@ -41,7 +41,7 @@ export const WhatIsJoby = () => {
             </CardContent>
           </Card>
 
-          <Card className="border-border bg-card hover:shadow-lg transition-shadow row-span-2 grid place-items-center col-span-2 lg:col-span-1">
+          <Card className="border-border bg-card hover:shadow-lg  row-span-2 grid place-items-center col-span-2 lg:col-span-1 hover:scale-102 transition-all duration-300">
             <CardContent className=" md:flex-row lg:flex-col flex flex-col items-center gap-4">
               <img
                 src="/illustrations/undraw_filter_v54h.svg"
@@ -59,7 +59,7 @@ export const WhatIsJoby = () => {
             </CardContent>
           </Card>
 
-          <Card className="border-border bg-card hover:shadow-lg transition-shadow col-span-2  grid place-items-cennter">
+          <Card className="border-border bg-card hover:shadow-lg col-span-2  grid place-items-cennter hover:scale-102 transition-all duration-300">
             <CardContent className=" flex-col md:flex-row flex items-center gap-4">
               <img
                 src="/illustrations/undraw_loving-it_hspq.svg"
