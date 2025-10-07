@@ -1,13 +1,22 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { Briefcase, Target, Globe, Clock } from "lucide-react";
+import {
+  Briefcase,
+  Target,
+  Globe,
+  Clock,
+  User,
+  Filter,
+  Menu,
+  Check,
+} from "lucide-react";
 
 export default function HowItWorks() {
   const steps = [
     {
       number: 1,
-      duration: "1 min",
-      icon: <Briefcase />,
+      duration: "30 secs",
+      icon: <User />,
       title: "Create Your Profile",
       description:
         "Build a comprehensive profile showcasing your skills, experience, and career preferences in minutes.",
@@ -15,15 +24,15 @@ export default function HowItWorks() {
     {
       number: 2,
       duration: "2 mins",
-      icon: <Target />,
+      icon: <Filter />,
       title: "Filter & Discover",
       description:
         "Our smart algorithm finds and recommends jobs that perfectly match your skills and preferences.",
     },
     {
       number: 3,
-      duration: "3 mins",
-      icon: <Globe />,
+      duration: "2 mins",
+      icon: <Check />,
       title: "Apply & Connect",
       description:
         "Apply with one click and connect directly with hiring managers. Track your progress in real-time.",
@@ -50,7 +59,7 @@ export default function HowItWorks() {
         </div>
 
         {/* Steps */}
-        <div className="w-full mx-auto mt-16  ">
+        <div className="w-full mx-auto mt-16 max-w-2xl  ">
           <div className="w-fit  mx-auto ">
             {steps.map((step, index) => (
               <div className="relative border-l border-primary pb-10">
@@ -60,13 +69,21 @@ export default function HowItWorks() {
                 </div>
 
                 <Card className="ml-7  hover:shadow-lg transition-shadow">
-                  <CardTitle className="flex items-center px-4 gap-2">
-                    <span className="p-2 bg-primary/10 text-primary rounded-full">
-                      {step.icon}
-                    </span>
-                    <span className=" font-semibold text-2xl">
-                      {step.title}
-                    </span>
+                  <CardTitle className="flex flex-col md:flex-row items-center px-4 md:justify-between ">
+                    <div className="flex items-center gap-2">
+                      <span className="p-2 bg-primary/10 text-primary rounded-full">
+                        {step.icon}
+                      </span>
+                      <span className=" font-semibold text-2xl">
+                        {step.title}
+                      </span>
+                    </div>
+
+                    {/* duration */}
+                    <div className="flex self-start mt-2 md:mt-0 items-center gap-1 text-muted-foreground/80 p-2 bg-muted-foreground/10 rounded-full ">
+                      <Clock />
+                      <span className="text-sm ">{step.duration}</span>
+                    </div>
                   </CardTitle>
                   <CardContent>
                     <p className="text-muted-foreground">{step.description}</p>
