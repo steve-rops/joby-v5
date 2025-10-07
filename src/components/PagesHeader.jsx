@@ -83,10 +83,11 @@ export const PagesHeader = () => {
                 >
                   Why us
                 </li>
-                <li>
-                  <a href="#contact" className="hover:text-blue-500">
-                    Contact
-                  </a>
+                <li
+                  onClick={() => sctollToSection("howItWorks")}
+                  className="hover:text-blue-500 transition-colors hover:cursor-pointer"
+                >
+                  How it works
                 </li>
               </ul>
             </motion.nav>
@@ -157,13 +158,11 @@ export const PagesHeader = () => {
                 >
                   Why us
                 </li>
-                <li>
-                  <a
-                    href="#contact"
-                    className="hover:text-blue-500 transition-colors"
-                  >
-                    Contact
-                  </a>
+                <li
+                  onClick={() => sctollToSection("howItWorks")}
+                  className="hover:text-blue-500 transition-colors hover:cursor-pointer"
+                >
+                  How it works
                 </li>
               </ul>
             </motion.nav>
