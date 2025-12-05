@@ -1,21 +1,11 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import {
-  Briefcase,
-  Target,
-  Globe,
-  Clock,
-  User,
-  Filter,
-  Menu,
-  Check,
-} from "lucide-react";
+import { Clock, User, Filter, Check } from "lucide-react";
 
 export default function HowItWorks() {
   const steps = [
     {
       number: 1,
-      duration: "30 secs",
       icon: <User />,
       title: "Create Your Profile",
       description:
@@ -23,7 +13,6 @@ export default function HowItWorks() {
     },
     {
       number: 2,
-      duration: "2 mins",
       icon: <Filter />,
       title: "Filter & Discover",
       description:
@@ -31,7 +20,6 @@ export default function HowItWorks() {
     },
     {
       number: 3,
-      duration: "2 mins",
       icon: <Check />,
       title: "Apply & Connect",
       description:
@@ -77,12 +65,6 @@ export default function HowItWorks() {
                       <span className=" font-semibold text-2xl">
                         {step.title}
                       </span>
-                    </div>
-
-                    {/* duration */}
-                    <div className="flex self-start mt-2 md:mt-0 items-center gap-1 text-muted-foreground/80 p-2 bg-muted-foreground/10 rounded-full ">
-                      <Clock />
-                      <span className="text-sm ">{step.duration}</span>
                     </div>
                   </CardTitle>
                   <CardContent>

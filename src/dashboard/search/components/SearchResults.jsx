@@ -2,7 +2,7 @@ import { CustomDrawer } from "@/components/CustomDrawer";
 import { Button } from "@/components/ui/button";
 import { useGetJobs } from "@/hooks/jobs/useGetJobs";
 import { isNew } from "@/lib/utils";
-import { Circle, HeartIcon, MapPin, Pin } from "lucide-react";
+import { Circle, MapPin } from "lucide-react";
 import { Link } from "react-router";
 import { LikeJobButton } from "./LikeJobButton";
 
@@ -11,12 +11,14 @@ export const SearchResults = () => {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between sticky top-0 bg-background py-2 md:relative">
+      <div
+        className={`flex items-center justify-between sticky top-0 bg-background py-2 md:relative bg-gradient-to-br to-primary/10 from-accent-foreground/10 rounded-lg p-2 `}
+      >
         <h3 className="text-lg text-foreground/75 font-semibold">
           Search Results
         </h3>
         <CustomDrawer className="md:hidden">
-          <Button variant="secondary">Filters</Button>
+          <Button variant="outline">Filters</Button>
         </CustomDrawer>
       </div>
       <div className="space-y-2 md:grid md:grid-cols-2 gap-2">

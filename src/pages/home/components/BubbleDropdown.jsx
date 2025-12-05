@@ -44,8 +44,8 @@ export const BubbleDropdown = () => {
         <DropdownMenuItem onClick={() => scrollToSection("whyChooseUs")}>
           Why us
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => scrollToSection("contact")}>
-          Contact
+        <DropdownMenuItem onClick={() => scrollToSection("HowItWorks")}>
+          How to use
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

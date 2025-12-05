@@ -1,31 +1,16 @@
 import { Button } from "../../components/ui/button";
-import { Badge } from "../../components/ui/badge";
-
-import {
-  ArrowRight,
-  Briefcase,
-  CheckCircle,
-  Clock,
-  Globe,
-  Search,
-  Shield,
-  Star,
-  Target,
-  TrendingUp,
-  Users,
-  Zap,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Hero } from "./components/Hero";
 import { WhatIsJoby } from "./components/WhatIsJoby";
-import { WhyChooseUs } from "./components/WhyChooseUs";
 import HowItWorks from "./components/HowItWorks";
+import { WhyChooseUs } from "./components/WhyChooseUs";
 
 export const Home = () => {
   return (
     <>
       <Hero />
       <WhatIsJoby />
-      {/* <WhyChooseUs /> */}
+      <WhyChooseUs />
       <HowItWorks />
 
       {/* CTA */}
